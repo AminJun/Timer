@@ -1,21 +1,34 @@
 <!DOCTYPE html> 
 <html lang="en">
 	<head>
+		<meta charset="UTF-8">
 		<title>Work</title>
 		<script src="script.js"></script>
+		<style>
+			body {
+				text-align:center;
+				padding-top: 100px;
+			}
+			span {
+				font-size: 6em;	
+			}
+			#total {
+				font-size: 2em;
+			}
+		</style>
 	</head>
 	<body onload="main();"> 
 		<div>
-			<span id="total">Hour</span>
+			<span id="total">0</span>
 		</div>
 		
 		<div>
-			<span id="hour">Hour</span>
+			<span id="hour">00</span>
 			<span>:</span>
-			<span id="minut">Minute</span>
+			<span id="minut">00</span>
 			<span>:</span>
-			<span id="second">Second</span>
-			<input id="but" type="button" value="start" onclick="clicked();">
+			<span id="second">00</span>
 		</div>
+		<input id="but" type="button" value="start" onclick="clicked();">
 	</body>
 </html>
