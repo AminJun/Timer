@@ -37,8 +37,12 @@ function timer(){
 function update(){
 	document.getElementById("total").innerHTML=parseInt(totalmin / 60 / 60); 
 	document.getElementById("hour").innerHTML=parseInt(cur / 60 / 60); 
-	document.getElementById("minut").innerHTML=parseInt((cur/60) % 60);
-	document.getElementById("second").innerHTML=parseInt(cur % 60);
+	var cm=parseInt((cur/60) % 60);
+	if(cm < 10)	cm="0"+cm; 
+	document.getElementById("minut").innerHTML=cm;
+	var cs = parseInt(cur % 60);
+	if(cs < 10)	cs="0"+cs;
+	document.getElementById("second").innerHTML=cs;
 }
 
 function clicked(){
