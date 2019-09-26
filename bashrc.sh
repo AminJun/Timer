@@ -1,5 +1,5 @@
 #!/bin/bash
 
 function timer(){
-	python /home/amin/bin/timer/timer.py "$1"
+	python /Users/DrJun/bin/time/timer.py "$1"
 }
