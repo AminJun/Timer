@@ -3,6 +3,7 @@ import datetime
 import sys 
 import signal
 import time
+import os
 
 class GracefulKiller:
     kill_now = False
@@ -16,7 +17,8 @@ class GracefulKiller:
 
 def load_db():
     db = {} 
-    with open('log.db', 'r') as f:
+    file_address=os.path.join(os.path.split(__file__)[0], 'log.db')
+    with open(file_address, 'r') as f:
         for line in f: 
             key, value = line.split('\t')
             value = int(value)
@@ -25,7 +27,8 @@ def load_db():
     return db
 
 def save_db(db):
-    with open('log.db', 'w') as f:
+    file_address=os.path.join(os.path.split(__file__)[0], 'log.db')
+    with open(file_address, 'w') as f:
         for key, val in db.iteritems():
             f.write('{}\t{}\n'.format(key, val))
 
