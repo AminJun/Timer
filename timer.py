@@ -1,4 +1,5 @@
 #from __future__ import print_function
+import calendar
 import datetime 
 import sys 
 import signal
@@ -37,11 +38,11 @@ def hms(t):
 
 
 if __name__ == '__main__': 
-    if len(sys.argv) < 2:
-        raise Exception('Tell me what you doin')
-
-    category = sys.argv[1]
     start = datetime.datetime.now()
+    if len(sys.argv) < 2:
+        category = calendar.month_name[start.month] + str(start.day)
+    else:
+        category = sys.argv[1]
 
     killer = GracefulKiller()
     db = load_db()
