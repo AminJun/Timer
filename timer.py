@@ -17,7 +17,7 @@ class GracefulKiller:
 
 def get_debt():
     now = datetime.datetime.now().date()
-    date = datetime.date(day=1, month=4, year=2019)
+    date = datetime.date(day=1, month=5, year=2019)
     delta = now - date
     return delta.days * 20 // 7
 
@@ -32,12 +32,12 @@ def load_db():
             db[key] = value 
             print '{}:\t{}'.format(key, hms(value))
             sum+=value
-    print('===============================')
+    print('================================')
     print('{}:\t{}'.format('Total', hms(sum)))
     hours = sum // 3600
     debt = get_debt() - hours
     print('Total debt is {} hours'.format(debt))
-    print('===============================')
+    print('================================')
     return db
 
 def save_db(db):
